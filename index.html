@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#234a3c" />
+    <meta name="description" content="在本地浏览器转换 BibTeX、RIS 和 CSL-JSON，生成 APA 第 7 版、Vancouver、IEEE 参考文献。" />
+    <title>Reference Converter · 参考文献转换</title>
+    <script type="module" crossorigin src="./assets/index-QuyWA2NI.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-NvyLkFp8.css">
+  <style>.site-downloads{display:flex;align-items:center;flex-wrap:wrap;gap:12px 18px;margin:0 0 22px;font-size:11px;color:#6e7a6a}.site-downloads .button{min-height:44px;text-decoration:none}.site-license-link{margin-left:auto;padding:12px 0}@media(max-width:760px){.site-downloads{gap:5px 14px}.site-downloads>span{flex-basis:100%}.site-license-link{margin-left:0}}</style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="wordmark" href="#" aria-label="Reference Converter 首页"><span class="brand-mark" aria-hidden="true">R.</span><span>REFERENCE<span class="wordmark-light"> / CONVERTER</span></span></a>
+        <span class="privacy-badge"><span aria-hidden="true"></span> 本地处理 · 无需账户</span>
+      </header>
+
+      <main>
+        <section class="intro" aria-labelledby="page-title">
+          <p class="eyebrow">A LITTLE ORDER FOR YOUR REFERENCES</p>
+          <h1 id="page-title">把参考文献，<br class="mobile-break" />整理得准确一些。</h1>
+          <p class="intro-description">从结构化文献数据出发，转换为 APA 7、Vancouver 或 IEEE。<br class="desktop-break" />下载可编辑的 Word 文档，保留标点、斜体与段落格式。</p>
+          <div class="intro-note"><span class="edition-tag">APA 7th</span><span>第 7 版样式 · 元数据检查 · 保留富文本格式</span></div>
+        </section>
+
+        <section class="site-downloads" aria-label="离线使用与开源许可"><a class="button secondary" href="./downloads/Reference-Converter-Offline.zip" download>下载免安装离线版 ↓</a><span>发给朋友：解压后双击 HTML 文件，不用安装。</span><a class="site-license-link" href="./LICENSES.txt">开源组件与许可</a></section>
+        <section class="workspace" aria-label="参考文献转换工作区">
+          <section class="panel input-panel" aria-labelledby="input-title">
+            <div class="panel-heading"><div><span class="step">01 / INPUT</span><h2 id="input-title">放入文献数据</h2></div><button type="button" id="sample-button" class="button-link">试用示例 <span aria-hidden="true">↗</span></button></div>
+            <div class="field-row">
+              <label for="input-format">输入格式</label>
+              <select id="input-format"><option value="auto">自动识别</option><option value="bibtex">BibTeX (.bib)</option><option value="ris">RIS (.ris)</option><option value="csl-json">CSL-JSON (.json)</option></select>
+            </div>
+            <label for="reference-input" class="visually-hidden">文献数据内容</label>
+            <textarea id="reference-input" spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="在这里粘贴 BibTeX、RIS 或 CSL-JSON…&#10;&#10;@article{example,&#10;  author = {Rivera, Elena},&#10;  title = {A study of learning},&#10;  year = {2024}&#10;}" aria-describedby="input-help"></textarea>
+            <div class="editor-footer"><span id="character-count">0 字符</span><button id="clear-button" type="button" class="button-link subtle" disabled>清空</button></div>
+            <div class="upload-row"><button type="button" class="button secondary" id="upload-button"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V3m-5 5 5-5 5 5M4 15v5a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-5" /></svg>选择文件</button><span id="file-info">支持 .bib / .ris / .json，最大 5 MB</span><input id="file-input" class="visually-hidden" type="file" accept=".bib,.bibtex,.ris,.json,application/json" tabindex="-1" /></div>
+            <p class="field-help" id="input-help">已有的普通参考文献段落无法可靠逆向解析。请优先从 Zotero、EndNote 等工具导出上述格式。</p>
+            <div class="convert-row"><button type="button" class="button primary" id="convert-button" disabled>转换参考文献 <span aria-hidden="true">→</span></button><span>数据仅在此浏览器内处理</span></div>
+          </section>
+
+          <section class="panel output-panel" aria-labelledby="output-title">
+            <div class="panel-heading"><div><span class="step">02 / OUTPUT</span><h2 id="output-title">查看与导出</h2></div><span class="result-count" id="result-count">等待输入</span></div>
+            <div class="field-row"><label for="output-format">目标格式</label><select id="output-format"><optgroup label="参考文献 · 保留排版"><option value="apa7-html">APA 7 · 富文本</option><option value="vancouver-html">Vancouver / NLM · 富文本</option><option value="ieee-html">IEEE · 富文本</option></optgroup><optgroup label="参考文献 · 纯文本"><option value="apa7-text">APA 7 · 纯文本</option><option value="vancouver-text">Vancouver / NLM · 纯文本</option><option value="ieee-text">IEEE · 纯文本</option></optgroup><optgroup label="文献数据 · 可继续编辑"><option value="bibtex">BibTeX (.bib)</option><option value="ris">RIS (.ris)</option><option value="csl-json">CSL-JSON (.json)</option></optgroup></select></div>
+            <div class="preview-area" id="preview-area" aria-label="转换结果预览" aria-busy="false">
+              <div class="empty-state" id="empty-state"><span class="empty-mark" aria-hidden="true">“</span><h3>让每一条引用，各就其位。</h3><p>粘贴文献数据，选择目标格式，<br />点击转换后在这里查看结果。</p><span class="paper-lines" aria-hidden="true"></span></div>
+              <div id="rendered-output" class="bibliography" hidden></div>
+              <pre id="text-output" hidden></pre>
+            </div>
+            <p class="output-format-note" id="output-format-note">APA 7 Word 文档保留斜体，采用 12 磅 Times New Roman、双倍行距和 0.5 英寸悬挂缩进。</p>
+            <div class="output-actions"><button type="button" class="button primary word-download-button" id="download-word-button" aria-describedby="output-format-note" disabled>下载 Word</button><button type="button" class="button secondary" id="copy-rich-button" disabled>复制富文本</button><button type="button" class="button secondary" id="copy-text-button" disabled>复制文本</button><button type="button" class="button download-button" id="download-button" disabled>下载 HTML</button></div>
+          </section>
+        </section>
+
+        <div id="status-message" class="status-message" role="status" aria-live="polite" hidden></div>
+        <section id="warning-panel" class="warning-panel" aria-labelledby="warning-title" hidden><div class="warning-heading"><span class="warning-symbol" aria-hidden="true">!</span><div><h2 id="warning-title">这些信息还需要核对</h2><p>格式可以整理，缺失的文献信息需要你来补全。</p></div></div><ul id="warning-list"></ul></section>
+
+        <section class="guidance" aria-label="使用提醒"><div><span class="guidance-number">01</span><h3>准确，始于完整信息</h3><p>作者、日期、题名和来源决定引用结果。元数据缺失时，请回到原始来源补全。</p></div><div><span class="guidance-number">02</span><h3>给专有名词留一次人工核对</h3><p>APA 题名采用句首字母大写。人名、缩写、地名和其他专有名词，仍需逐项确认。</p></div><div><span class="guidance-number">03</span><h3>把参考文献带进 Word</h3><p>点击「下载 Word」生成可编辑的 .docx。APA 7 文档使用 12 磅 Times New Roman、双倍行距和 0.5 英寸悬挂缩进，并保留斜体。</p></div></section>
+      </main>
+
+      <footer class="site-footer"><span>Reference Converter <span aria-hidden="true">/</span> 清楚引用，认真写作。</span><details><summary>格式与处理说明</summary><p>参考文献通过固定版本 CSL 样式与 citation-js 生成。输入不会上传，也不会自动查询 DOI；本工具检查结构与常见缺失项，不验证来源的真实性。Word 文档在本机生成。APA 7 Word 使用 12 磅 Times New Roman、双倍行距与 0.5 英寸悬挂缩进，并保留斜体；复制富文本时，接收软件可能调整粘贴样式。</p><p>示例内容为合成数据，仅用于演示，请勿用于实际引用。文献排序、同年作者区分等由所选样式处理。导出为 BibTeX 或 RIS 时，目标格式可能无法保留全部 CSL-JSON 字段。</p></details></footer>
+    </div>
+  </body>
+</html>

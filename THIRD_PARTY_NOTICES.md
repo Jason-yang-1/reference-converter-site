@@ -1,0 +1,13 @@
+# Third-party notices
+
+The citation styles in `styles/*.csl` come from the [Citation Style Language project](https://citationstyles.org/), specifically its [official style repository](https://github.com/citation-style-language/styles). They are redistributed unmodified under [Creative Commons Attribution-ShareAlike 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/). Author and contributor credits are preserved inside each XML file. Exact source URLs, commit and SHA-256 checksums are recorded in `styles/sources.json`.
+
+`styles/vancouver.csl` is an unchanged copy of upstream `nlm-citation-sequence.csl`, titled “NLM Style Guide (Vancouver): Citing Medicine 2nd edition (citation-sequence)”. The local filename is an alias, not a different style.
+
+At runtime, `src/converter.js` adapts the APA style's `source-DOI-URL` macro: the undated-source retrieval phrase is additionally conditional on the presence of `accessed`. This prevents a bare “Retrieved” when no retrieval date was supplied. The pinned XML remains unchanged. This style adaptation and the resulting adapted CSL remain available under CC BY-SA 3.0 with attribution to the original CSL contributors; the change is maintained by this project. A changed upstream macro causes an explicit initialization error, so a future style update requires review.
+
+Reference parsing and bibliography generation use [Citation.js](https://citation.js.org/) and its citeproc-js integration. Browser rendering uses [DOMPurify](https://github.com/cure53/DOMPurify), and building uses [Vite](https://vite.dev/). Native Word export uses [docx](https://docx.js.org/) (MIT) and [htmlparser2](https://github.com/fb55/htmlparser2) (MIT); tests inspect DOCX packages with [fflate](https://github.com/101arrowz/fflate) (MIT). Their licenses remain in their distributed packages; package versions and integrity hashes are locked in `package-lock.json`.
+
+APA is a trademark of the American Psychological Association. This project is an independent tool and is not an APA-endorsed or APA-certified product.
+
+The offline HTML includes an expandable attribution appendix containing installed production package notices, docx's prebundled notices, and the unmodified citeproc-js source under its CPAL-1.0 option. Prebundled component versions can differ from separately installed packages. citeproc's actual source notice offers CPAL-1.0 or AGPL-3.0-or-later; the package metadata's AGPL-1.0 label is not used to reinterpret that notice. Copies of both license texts are included from the [SPDX CPAL-1.0 text](https://raw.githubusercontent.com/spdx/license-list-data/main/text/CPAL-1.0.txt) and [GNU AGPL-3.0 text](https://www.gnu.org/licenses/agpl-3.0.txt), retrieved on 2026-09-22.
