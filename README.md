@@ -2,9 +2,9 @@
 
 **[打开在线转换器](https://jason-yang-1.github.io/reference-converter-site/)** · **[下载免安装离线版](https://jason-yang-1.github.io/reference-converter-site/downloads/Reference-Converter-Offline.zip)**
 
-无需安装：打开网站，导入 BibTeX / RIS / CSL-JSON，转换后点击「下载 Word」。文献内容只在浏览器内处理。
+无需安装：打开网站，导入 BibTeX / RIS / CSL-JSON，转换后点击「下载 Word」。普通转换在浏览器内完成；点击「查找并补全 DOI」时，会向 Crossref 发送题名、首位作者、年份和来源名进行检索。
 
-This repository contains the generated static website and offline downloads for Reference Converter. Open the website to convert references and download an editable Word bibliography, including APA 7 formatting. Reference data is processed locally in the browser.
+This repository contains the generated static website and offline downloads for Reference Converter. Open the website to convert references and download an editable Word bibliography, including APA 7 formatting. Ordinary conversion runs locally. The optional DOI lookup sends title, first author, year, and source name to Crossref only when requested.
 
 Offline downloads:
 
