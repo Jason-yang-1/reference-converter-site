@@ -6,8 +6,8 @@
     <meta name="theme-color" content="#234a3c" />
     <meta name="description" content="在本地浏览器转换 BibTeX、RIS 和 CSL-JSON，生成 APA 第 7 版、Vancouver、IEEE 参考文献。" />
     <title>Reference Converter · 参考文献转换</title>
-    <script type="module" crossorigin src="./assets/index-QuyWA2NI.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-NvyLkFp8.css">
+    <script type="module" crossorigin src="./assets/index-rEbYs92t.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-MxKDY-uA.css">
   <style>.site-downloads{display:flex;align-items:center;flex-wrap:wrap;gap:12px 18px;margin:0 0 22px;font-size:11px;color:#6e7a6a}.site-downloads .button{min-height:44px;text-decoration:none}.site-license-link{margin-left:auto;padding:12px 0}@media(max-width:760px){.site-downloads{gap:5px 14px}.site-downloads>span{flex-basis:100%}.site-license-link{margin-left:0}}</style>
   </head>
   <body>
@@ -38,6 +38,7 @@
             <div class="editor-footer"><span id="character-count">0 字符</span><button id="clear-button" type="button" class="button-link subtle" disabled>清空</button></div>
             <div class="upload-row"><button type="button" class="button secondary" id="upload-button"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V3m-5 5 5-5 5 5M4 15v5a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-5" /></svg>选择文件</button><span id="file-info">支持 .bib / .ris / .json，最大 5 MB</span><input id="file-input" class="visually-hidden" type="file" accept=".bib,.bibtex,.ris,.json,application/json" tabindex="-1" /></div>
             <p class="field-help" id="input-help">已有的普通参考文献段落无法可靠逆向解析。请优先从 Zotero、EndNote 等工具导出上述格式。</p>
+            <p class="field-help doi-help">文献数据含 DOI 时，APA 7 会显示完整的 https://doi.org/…，网页和 Word 中都可点击。缺少 DOI 时请根据原文补充。</p>
             <div class="convert-row"><button type="button" class="button primary" id="convert-button" disabled>转换参考文献 <span aria-hidden="true">→</span></button><span>数据仅在此浏览器内处理</span></div>
           </section>
 
@@ -60,7 +61,7 @@
         <section class="guidance" aria-label="使用提醒"><div><span class="guidance-number">01</span><h3>准确，始于完整信息</h3><p>作者、日期、题名和来源决定引用结果。元数据缺失时，请回到原始来源补全。</p></div><div><span class="guidance-number">02</span><h3>给专有名词留一次人工核对</h3><p>APA 题名采用句首字母大写。人名、缩写、地名和其他专有名词，仍需逐项确认。</p></div><div><span class="guidance-number">03</span><h3>把参考文献带进 Word</h3><p>点击「下载 Word」生成可编辑的 .docx。APA 7 文档使用 12 磅 Times New Roman、双倍行距和 0.5 英寸悬挂缩进，并保留斜体。</p></div></section>
       </main>
 
-      <footer class="site-footer"><span>Reference Converter <span aria-hidden="true">/</span> 清楚引用，认真写作。</span><details><summary>格式与处理说明</summary><p>参考文献通过固定版本 CSL 样式与 citation-js 生成。输入不会上传，也不会自动查询 DOI；本工具检查结构与常见缺失项，不验证来源的真实性。Word 文档在本机生成。APA 7 Word 使用 12 磅 Times New Roman、双倍行距与 0.5 英寸悬挂缩进，并保留斜体；复制富文本时，接收软件可能调整粘贴样式。</p><p>示例内容为合成数据，仅用于演示，请勿用于实际引用。文献排序、同年作者区分等由所选样式处理。导出为 BibTeX 或 RIS 时，目标格式可能无法保留全部 CSL-JSON 字段。</p></details></footer>
+      <footer class="site-footer"><span>Reference Converter <span aria-hidden="true">/</span> 清楚引用，认真写作。</span><details><summary>格式与处理说明</summary><p>参考文献通过固定版本 CSL 样式与 citation-js 生成。输入不会上传，也不会自动查询 DOI；本工具检查结构与常见缺失项，不验证来源的真实性。Word 文档在本机生成。APA 7 Word 使用 12 磅 Times New Roman、双倍行距与 0.5 英寸悬挂缩进，并保留斜体；复制富文本时，接收软件可能调整粘贴样式。</p><p>页面示例采用 Miller（1956）的公开文献，DOI 为 10.1037/h0043158，用于展示完整 DOI 链接。文献排序、同年作者区分等由所选样式处理。导出为 BibTeX 或 RIS 时，目标格式可能无法保留全部 CSL-JSON 字段。</p></details></footer>
     </div>
   </body>
 </html>
